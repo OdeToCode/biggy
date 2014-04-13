@@ -52,7 +52,7 @@ namespace Biggy.JSON
         T IBiggyStore<T>.Add(T item)
         {
             var json = JsonConvert.SerializeObject(item);            
-            using (var writer = File.AppendText(this.DbPath))
+            using (var writer = File.AppendText(DbPath))
             {
                 writer.WriteLine(json);
             }
